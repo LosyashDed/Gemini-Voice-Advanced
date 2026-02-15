@@ -1,55 +1,57 @@
+[Читать на русском](README_RU.md)
+
 # 🎙️ Gemini Voice Advanced
 
 > Made by [losyash](http://losyashded.ru/)
 
-Chrome-расширение для записи и отправки голосовых сообщений в [Google Gemini](https://gemini.google.com).
+Chrome extension for recording and sending voice messages to [Google Gemini](https://gemini.google.com).
 
-Нажмите одну кнопку — расширение запишет аудио с микрофона, вставит его в чат Gemini и отправит.
+One click — the extension records audio from your microphone, pastes it into the Gemini chat, and sends it.
 
-## Возможности
+## Features
 
-- Запись голоса прямо из popup-окна расширения
-- Визуализация звука в реальном времени
-- Таймер записи
-- Автоматическая вставка аудио в активный чат Gemini
-- Если Gemini не открыт — расширение откроет новую вкладку
-- Поддержка форматов OGG Opus / WebM Opus
+- Record voice directly from the extension popup
+- Real-time audio visualization
+- Recording timer
+- Auto-paste audio into the active Gemini chat
+- If Gemini isn't open — the extension opens a new tab automatically
+- OGG Opus / WebM Opus format support
 
-## Установка
+## Installation
 
-1. Скачайте или клонируйте репозиторий
-2. Откройте `chrome://extensions/`
-3. Включите «Режим разработчика» (Developer mode)
-4. Нажмите «Загрузить распакованное расширение» (Load unpacked)
-5. Выберите папку с файлами расширения
-6. При первом запуске откроется страница с запросом доступа к микрофону — разрешите его
+1. Download or clone the repository
+2. Open `chrome://extensions/`
+3. Enable "Developer mode"
+4. Click "Load unpacked"
+5. Select the extension folder
+6. On first launch a page will open requesting microphone access — grant it
 
-## Использование
+## Usage
 
-1. Откройте любую страницу (или Gemini)
-2. Нажмите на иконку расширения в панели Chrome
-3. Нажмите кнопку микрофона для начала записи
-4. Нажмите ещё раз для остановки — аудио автоматически отправится в Gemini
+1. Open any page (or Gemini)
+2. Click the extension icon in the Chrome toolbar
+3. Click the microphone button to start recording
+4. Click again to stop — the audio will be sent to Gemini automatically
 
-## Структура проекта
+## Project Structure
 
 ```
-manifest.json       — конфигурация расширения
-background.js       — service worker, управление записью и вкладками
-content.js          — вставка аудио в редактор Gemini
-popup.html/js/css   — интерфейс popup-окна
-offscreen.html/js   — запись аудио через Offscreen API
-welcome.html/js     — страница запроса доступа к микрофону
-icons/              — иконки расширения
+manifest.json       — extension configuration
+background.js       — service worker, recording & tab management
+content.js          — audio paste into Gemini editor
+popup.html/js/css   — popup UI
+offscreen.html/js   — audio recording via Offscreen API
+welcome.html/js     — microphone permission page
+icons/              — extension icons
 ```
 
-## Технологии
+## Technologies
 
 - Chrome Extensions Manifest V3
-- Offscreen API для записи аудио
+- Offscreen API for audio recording
 - MediaRecorder API
-- Web Audio API (визуализация)
+- Web Audio API (visualization)
 
-## Лицензия
+## License
 
 MIT
