@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Gemini Voice Advanced — Настройка</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Google Sans', 'Segoe UI', Roboto, sans-serif;
+      background: #1e1f20;
+      color: #e3e3e3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .container {
+      text-align: center;
+      max-width: 480px;
+      padding: 40px;
+    }
+    h1 { font-size: 24px; margin-bottom: 16px; color: #8ab4f8; }
+    p { font-size: 15px; color: #9aa0a6; margin-bottom: 24px; line-height: 1.5; }
+    .btn {
+      background: #8ab4f8;
+      color: #1e1f20;
+      border: none;
+      border-radius: 24px;
+      padding: 12px 32px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: #aecbfa; }
+    .status {
+      margin-top: 20px;
+      font-size: 14px;
+      min-height: 20px;
+    }
+    .success { color: #81c995; }
+    .error { color: #f28b82; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎙️ Gemini Voice Advanced</h1>
+    <p>Для работы расширения необходим доступ к микрофону.<br>Нажмите кнопку ниже и разрешите доступ.</p>
+    <button id="grant-btn" class="btn">Разрешить доступ к микрофону</button>
+    <p id="status" class="status"></p>
+  </div>
+  <script src="welcome.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+/* Gemini Voice Advanced - Popup Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 300px;
+    height: 200px;
+    font-family: 'Google Sans', 'Segoe UI', Roboto, sans-serif;
+    background: #1e1f20;
+    color: #e3e3e3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Mic button */
+.mic-btn {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: none;
+    background: #8ab4f8;
+    color: #1e1f20;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    position: relative;
+}
+
+.mic-btn:hover {
+    background: #aecbfa;
+    transform: scale(1.05);
+}
+
+.mic-btn:active {
+    transform: scale(0.95);
+}
+
+.mic-btn:focus-visible {
+    outline: 2px solid #8ab4f8;
+    outline-offset: 3px;
+}
+
+/* Status text */
+.status {
+    font-size: 13px;
+    color: #9aa0a6;
+    text-align: center;
+    min-height: 18px;
+    transition: color 0.2s;
+}
+
+/* Pulse animation for recording */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(234, 67, 53, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 16px rgba(234, 67, 53, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(234, 67, 53, 0);
+    }
+}
+
+/* State: idle */
+body.idle .mic-btn {
+    background: #8ab4f8;
+    color: #1e1f20;
+}
+
+/* State: recording */
+body.recording {
+    height: auto;
+    min-height: 280px;
+}
+
+body.recording .mic-btn {
+    background: #ea4335;
+    color: #fff;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+body.recording .mic-btn:hover {
+    background: #f28b82;
+}
+
+body.recording .status {
+    color: #ea4335;
+}
+
+/* State: sending */
+body.sending .mic-btn {
+    background: #5f6368;
+    color: #9aa0a6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+body.sending .status {
+    color: #8ab4f8;
+}
+
+/* State: error */
+body.error .mic-btn {
+    background: #8ab4f8;
+    color: #1e1f20;
+}
+
+body.error .status {
+    color: #f28b82;
+}
